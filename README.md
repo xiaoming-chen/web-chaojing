@@ -3,11 +3,7 @@
 
 > 在html文件的`<head>`标签里加上`<meta name="apple-itunes-app" content="app-id=1142491576">`在苹果浏览器上可以直接打开APP（待测试）
 
-#### 安装
-```html
-<script src="https://cdn1.bb-app.cn/share/common.min.js"></script>
-```
-  
+
 #### 向服务器请求数据的接口
 ```javascript
 Common.Request(url, ops)
