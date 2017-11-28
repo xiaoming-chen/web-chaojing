@@ -1,3 +1,6 @@
 [submodule "cjadmin"]
 	path = cjadmin
 	url = D:\\dev\\web-chaojing\\cjadmin
+[submodule "web-chaojing"]
+	path = web-chaojing
+	url = ./
