@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;width: 100%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超竞教育报名</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- <script src="//cdn.bootcss.com/eruda/1.2.4/eruda.min.js "></script>
+    <script>eruda.init();</script> -->
+    <meta name="description" itemprop="description" content='报名超竞教育"电竞讲师培养计划"，成为专业电竞培训师'/>
+    <script src="//edu.supergen.cn/common.min.js"></script>
+    <script type="text/javascript">
+        Common.SetShareInfo({
+            title:'超竞教育“电竞讲师培养报名”开启！',
+            desc:'你好，新一代的职业电竞人。',
+            img_url:'https://edu.supergen.cn/icon_chaoj.jpg',
+            url:'//edu.supergen.cn/h5/application.html'
+        })
+    </script>
+    <style type="text/css">
+        body {
+            background:#0f0d0d;
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            /*overflow:hidden*/
+        }
+        i{font-style: normal;margin-right: 10%}
+        i img{width: 15px;height: 15px;margin-right: 1%;vertical-align: baseline;}
+        #app{margin: 0}
+        #app div.head,#app div.foot{text-align: center;}
+        #app div.foot{margin: 2% 0 5%}
+        #app div.head img{width: 100%}
+        #app div.foot img{width: 60%}
+        #app div.center{box-sizing: border-box;padding: 0 10%}
+        #app div.center>p,#app div.center>div{box-sizing: border-box;width: 100%;color: #bebebe;min-width: 285px;position: relative;padding-left: 80px}
+        select{
+            -webkit-appearance:none; /*去除系统默认的样式*/
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   /* 点击高亮的颜色*/
+        }
+        #app div.center>p select{
+            width: 40%;
+            margin: 0;
+            background: url('images/bt_xiala.png') no-repeat right center #272727;
+            background-size:18px 100%;
+            border: 1px solid #272727;
+            height: 25px;line-height: 25px;color:#bebebe;vertical-align: unset;}
+        #app div.center>p select option{background: #272727!important;}
+        
+        #app div.center>p span.title{display: inline-block;width: 8%;position: absolute;left: 0;min-width: 60px;text-align: right;color: #ccc;margin-right: 3%;vertical-align: text-top;}
+        #app div.center>p input[type="text"],#app div.center>p input[type="email"]{color: #fff;box-sizing: border-box;padding: 0 1%;background: #272727;border: 1px solid #272727;width: 100%;height: 25px;line-height: 25px;vertical-align: middle;}
+        #app div.center>p.verification{box-sizing: border-box;}
+        #app div.center>p.verification input[type="text"]{width: 55%;}
+        #app div.center>p.remind{font-size: .3rem;text-align: center;color: #898989;margin: 5% 0;padding: 0}
+        #app div.center>p span.verification{display: inline-block;color: #fff;background: #d90d25;font-size: 12px;letter-spacing: 0.15em;float: right;width: 80px;text-align: center;height: 25px;line-height: 25px;vertical-align: middle;}
+        #app div.center>p span.btn{display: inline-block;color: #fff;background: #d90d25;font-size: .9rem;letter-spacing: 0.25em;width:160px;text-align: center;height: 34px;line-height: 34px;}
+        #code{position: fixed;background: rgba(0,0,0,0.6);top: 0;bottom: 0;left: 0;right: 0;z-index: 99}
+        #code>div{width: 80%;height: 40px;line-height: 40px;font-size: 14px;z-index: 99;text-align: center;background: #fff;color: red;font-weight: 100;border-radius: 8px;position: absolute;top: 50%;left: 50%;margin: -25px 0 0 -40%;}
+        #confirmationBox{position: fixed;z-index: 9;width: 80%;height: 100px;overflow: hidden;top: 50%;left: 10%;margin: -50px  0 0 0;background: #fff;text-align: center;border-radius: 15px}
+        #confirmationBox>h2{height: 32px;line-height: 32px;font-weight: normal;font-size: 20px}
+        #confirmationBox>p{width: 100%;height: 35px;line-height: 35px;padding: 0;margin: 0;box-sizing: border-box;}
+        #confirmationBox>p span{display: inline-block;width: 50%;background: #9f8f6d;height: 35px;color: #fff;box-sizing: border-box;border-left: 1px solid #ccc}
+        #confirmationBox>p span:nth-child(2){background: #d90d25}
+        div.imgBox,div.imgBox1{background: url("images/kuang_06.png") no-repeat center center;position: relative;height: auto;background-size: 100% 100%;box-sizing: border-box;padding: 30px 45px 30px;margin-top: 5%}
+        div.imgBox>img.headimg,div.imgBox>img.footimg,div.imgBox1>img.headimg,div.imgBox1>img.footimg{position: absolute;left: 2px;}
+        div.imgBox>img.headimg,div.imgBox1>img.headimg{top: 0;width: 98%}
+        div.imgBox>img.footimg,div.imgBox1>img.footimg{bottom: 0;width: 99%;bottom: -21px}
+        div.imgBox1{background-image:url("images/kuang_06.png") ;position: relative;}
+        div.imgBox1>ul{padding: 0;margin: 0;margin-top: 10px}
+        div.imgBox1>ul li{padding:0;margin:0;text-align: left;font-size: 16px;box-sizing:border-box;color: #7d7d7d}
+        div.imgBox1>ul.kec li{list-style: none;font-size: 13px;color: #fff}
+        div.imgBox1>ul.kec li.back{background-color: #1d1d1d;}
+        div.imgBox1>ul.kec li{height: 52px;line-height: 52px}
+
+        div.imgBox1>ul.kec li b{display: inline-block;width: 20%;text-align: center;font-weight: normal;}
+        div.imgBox1>ul.kec li span{display: inline-block;width: auto;text-align: left;}
+
+        div.imgBox1 p{margin-top: 0;}
+        div.imgBox1 p.ku{width: 83%;height: 50px;line-height: 50px;background:#1d1d1d;text-align: center;}
+        div.imgBox img{width: 100%;height: auto}
+        div.imgBox>p{margin:0;text-align: left;height: 30%}
+        div.imgBox>p span{display: inline-block;vertical-align: top;width: 30%;height: 65px;}
+        div.imgBox>p span:nth-child(1){width: 25%;font-size: 14px;text-align: center;box-sizing: border-box;padding-top: 1%}
+        div.imgBox>p span:nth-child(2){width: 28%;text-align: center;height: 45px;line-height:45px;font-size: 16px;background: red;color:#fff!important;margin: 0 2%}
+        div.imgBox>p span:nth-child(3){width: 38%;box-sizing: border-box;padding-top: 2%;font-size: 12px}
+        span.floatTitle{position: absolute;top: -13px;left: 75px;color: #fff;font-size: 22px;background: #0f0d0d;}
+        img.shape{width: 40px;margin-top: 8%}
+        div.imgBox1 div.box{margin: 8% 0;position: right;position:relative;}
+        div.imgBox1 div.box>img.bd{position: absolute;top: 0}
+        div.imgBox1 div.title{font-size: 25px;color: #fff;vertical-align: top;width: 41%;display: inline-block;}
+        div.imgBox1 div.text{width: 54%;display: inline-block;color: #8a8a8a}
+        div.imgBox1 div span{display: block;width: auto;font-size: 12px}
+        .redBtn{display: inline-block!important;background: red;color: #fff;padding: 1px 5px}
+        p.Auth{font-size: 12px;height: 50px;line-height: 50px;background: #1d1d1d;}
+        p.Auth i{margin: 0;width: 10%;margin-left: 3%;}
+        p.Auth b{font-weight: normal;color: red}
+    </style>
+</head>
+<body style="height: 100%;width: 100%">
+
+<div id="app" style="overflow:hidden;">
+    <img src="https://edu.supergen.cn/icon_chaoj.jpg" alt="" style="display: none">
+    <div id="code" v-show="code==1" style="display: none">
+        <div>{{codeText}}</div>
+    </div>
+
+    <!-- <div id="confirmationBox">
+        <h2>是否提交报名信息</h2>
+        <p>
+            <span>确 定</span><span>取 消</span>
+        </p>
+    </div> -->
+
+    <div class="head">
+        <img src="images/title.jpg" alt="">
+    </div>
+    <div class="center">
+        <p><span class="title">姓名</span><input type="text" v-model="userName" maxlength="15" placeholder="请填写姓名"></p>
+        <p>
+            <span class="title">性别</span>
+            <i @click="userGender=1"><img :src="userGender==1?'images/bt_red.png':'images/bt_white.png'">女</i>
+            <i @click="userGender=2"><img :src="userGender==2?'images/bt_red.png':'images/bt_white.png'">男</i>
+            <!-- <label><input type="radio" v-model.number="userGender" value="2"> 男</label> -->
+            <!-- <label><input type="radio" v-model.number="userGender" value="1"> 女</label> -->
+        </p>
+        <p>
+            <span class="title">地域</span><select name="select" class="province" v-model="userPro"><option>省</option><option v-for="(pro,i) in pro" v-text="pro"></option></select>
+            <select name="select" v-show="usercity!=''" class="province" v-model="usercity" style="width:55%;float: right"><option v-for="(pro,i) in city[userPro]" v-text="pro"></option></select>
+        </p>
+        <p><span class="title">手机号</span><input type="text" v-model="userMobile" maxlength="15" placeholder="请填写手机号码"></p>
+        <p class="verification">
+            <span class="title">验证码</span><input type="text" v-model="userVerf" maxlength="8">
+            <span class="verification" v-if="countDown!=0" style="background: #ccc" v-text="domeNum"></span>
+            <span class="verification" v-if="countDown==0" @click="getVerification()">发送验证码</span>
+        </p>
+        <p><span class="title">邮箱</span><input type="email" v-model="userEmail" placeholder="请填写电子邮箱地址"></p>
+        <p class="remind" style="margin:20px 0"><span class="btn" @click=submit()>立即报名</span></p>
+        <p class="remind">请保持手机通畅，工作人员将在3个工作日内联系你</p>
+    </div>
+    <!-- <div class="foot">
+        <img src="images/logo.png" alt="">
+    </div> -->
+    <div class="footImg" style="text-align: center;color: #ccc">
+        <img src="images/icon_xia.png" style="margin: 2%;width: 30px">
+        <div style="margin: 2%">
+            <h1 style="width: 100%;margin: 0;text-align: center;color: #fff;font-size: 50px;letter-spacing:15px">超竞教育</h1>
+            <p style="width: 100%;margin: 0;text-align: center;color: red;font-size:14px">全国首期 "电竞讲师培养计划" 招生简章</p>
+        </div>
+        <img class=shape src="images/shape.png">
+        <div class="imgBox">
+            <img src="images/kuang_05.png" class="headimg" style="width: 98%">
+             <p>
+                 <span style="font-weight: bold;">中国电竞<br><b style="color: red">市场规模</b></span>
+                 <span style="color: red;font-weight: bold;">980亿元</span>
+                 <span>正式驶入产业发展“快车道”</span>
+             </p>
+             <p style="margin:3% 0">
+                 <span style="font-weight: bold;">中国电竞<br><b style="color: red">用户体量</b></span>
+                 <span style="color: red;font-weight: bold;">3.5亿人</span>
+                 <span>引发行业“规模效应”</span>
+             </p>
+             <p>
+                 <span style="font-weight: bold;">中国电竞<br><b style="color: red">人才缺口</b></span>
+                 <span style="color: red;font-weight: bold;">26万人</span>
+                 <span>将你的兴趣变成未来“坚定的事业”</span>
+             </p>
+             <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div>
+
+        <img class="shape" src="images/shape.png">
+        <p style="margin: 5% 0 0;font-size: 26px;letter-spacing:2px"><span style="font-weight: bottom;color: #FFF;margin-right: 3px">腾讯+超竞</span>战略合作伙伴</p>
+        <div class="imgBox" style="padding-left:55px;padding-right:55">
+             <img src="images/kuang_05.png" class="headimg" style="width: 98%">
+             <img src="images/pic.jpg">
+             <p style="color: red;font-size: 16px;letter-spacing:3px;height: auto;margin-bottom: 5px">
+                 腾讯携手超竞在电子竞技行业人才培养领域全面发力
+             </p>
+             <p style="font-size: 16px;letter-spacing:2px;color: #515151;margin-bottom: 10%">
+                学历教育、职业化教育、以及大众化教育三个维度。在课程开发、教材编写、研究课题、实习实践这四个领域开展合作。<br>
+                与赛事组织、明星经纪、直播平台、内容制作及数据处理等多家电竞行业内的公司合作，优先录用所培养的人才。
+             </p>
+             <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div> 
+
+        <img class="shape" src="images/shape.png">
+        <p style="margin: 5% 0 0;font-size: 40px;letter-spacing:2px;height: 80px">
+            超竞教育<br>
+            <span style="font-weight: bottom;color: red;margin-right: 3px;font-size: 25px;position: relative;top: -15px">实训基地介绍</span>
+        </p>
+        <div class="imgBox" style="padding-left:45px;padding-right:40px">
+             <img src="images/kuang_05.png" class="headimg" style="width: 98%">
+             <p style="color: red;font-size: 18px;letter-spacing:2px;height: auto;margin-bottom: 20px;font-weight: bold;">
+                 超竞教育泛娱乐电竞实训基地
+             </p>
+             <p style="font-size: 16px;letter-spacing:1px;color: #515151;margin-bottom: 10%">
+                由超竞教育联合中山大学南方学院共同打造的首个 “泛娱乐电竞实训基地” ，实训基地内主要包括课室、对战室、电竞教学实训室（采访室、解说室、导编播室）、多功能中央会场等区域，可为电竞行业人才培养提供功能齐全、设备完善的授课及实训场所。
+             </p>
+             <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div>
+
+        <img class="shape" src="images/shape.png">
+        <p style="margin: 5% 0 0;font-size: 30px;letter-spacing:2px;height: 80px">电竞大咖讲师团</p>
+        <img src="images/man_01.jpg" style="width: 100%;margin-bottom: 8%">
+        <img class="shape" src="images/shape.png">
+        <p style="margin: 5% 0 0;font-size: 30px;letter-spacing:2px;height: 80px">明星大咖讲师团</p>
+        <img src="images/man_02.jpg" style="width: 100%;margin-bottom: 8%">
+        <img class="shape" src="images/shape.png">
+        <p style="margin: 5% 0 0;font-size: 35px;letter-spacing:2px;height: 80px">
+            电竞讲师培养计划<br>
+            <span style="font-weight: bottom;color: red;margin-right: 3px;font-size: 24px;position: relative;top: -15px">打造电竞黄埔军校一期班</span>
+        </p>
+
+        <div class="imgBox1" style="padding-left:70px;padding-right:70px;padding-bottom: 10%">
+             <img src="images/kuang_04.png" class="headimg" style="width: 98%">
+             <span class="floatTitle">招生对象</span>
+             <ul>
+                 <li>有意向进入电竞教育行业的社会人士</li>
+                 <li>电竞从业人员</li>
+                 <li>相关电竞专业或学校院校专业老师</li>
+                 <li>应届毕业生或院校电竞协会成员</li>
+             </ul>
+             <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div>
+
+        <div class="imgBox1" style="padding-left:75px;padding-right:35px;margin-top: 15%">
+             <img src="images/kuang_04.png" class="headimg" style="width: 98%">
+             <span class="floatTitle">开班计划</span>
+             <p style="text-align: left;color: #7d7d7d">开班时间：2017年12月18日</p>
+             <p style="text-align: left;color: #7d7d7d">培训周期：2017年12月18日至2018年2月9日</p>
+             <p style="text-align: left;color: #7d7d7d">总课时：300课时（含实训）</p>
+             <p style="text-align: left;color: #7d7d7d">培训地点：中山大学南方学院</p>
+             <p style="text-align: left;color: #7d7d7d">专业：<span style="font-size: 15px;color: red">电竞主持与解说、导编播、电竞商务</span></p>
+             <p style="text-align: left;color: #7d7d7d">授课方式：</p>
+             <p class="ku">通识性课程培训</p>
+             <img src="images/icon_xia_hui.png" style="width: 18px;position: relative;left: -9%;margin-bottom: 5px">
+             <p class="ku">分专业培训</p>
+             <img src="images/icon_xia_hui.png" style="width: 18px;position: relative;left: -9%;margin-bottom: 5px">
+             <p class="ku">企业实训</p>
+             <img src="images/icon_xia_hui.png" style="width: 18px;position: relative;left: -9%;margin-bottom: 5px">
+             <p class="ku">结业考评</p>
+            <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div>
+        
+        <div class="imgBox1" style="padding-left:39px;padding-right:39px;margin-top: 15%">
+             <img src="images/kuang_04.png" class="headimg" style="width: 98%">
+             <span class="floatTitle">课程设置</span>
+             <ul class="kec">
+                <li><b style="color: red">序号</b><span style="color: red">课程名称</span></li>
+                <li>
+                   <b>1</b><span>电子竞技概论及发展史(通识必修)</span>
+                </li>
+                <li class="back">
+                   <b>2</b><span>电子竞技概心理学(通识必修)</span>
+                </li>
+                <li>
+                   <b>3</b><span>互联网文化和安全法(通识必修)</span>
+                </li>
+                <li class="back">
+                   <b>4</b><span>电竞英语(通识必修)</span>
+                </li>
+                <li>
+                   <b>5</b><span>体育(通识必修)</span>
+                </li>
+                <li class="back">
+                   <b>6</b><span>主流电竞赛事与规则(通识必修)</span>
+                </li>
+                <li>
+                   <b>7</b><span>教师基本技能(通识必修)</span>
+                </li>
+                <li class="back">
+                   <b>8</b><span>教育学综合知识(通识必修)</span>
+                </li>
+                <li>
+                   <b>9</b><span>电竞人才培养(通识必修)</span>
+                </li>
+                <li class="back">
+                   <b>10</b><span>沟通与交流艺术(通识必修)</span>
+                </li>
+                <li>
+                    <b>11</b><span>计算机应用技术(通识选修)</span>
+                </li>
+                <li class="back">
+                   <b>12</b><span>人文艺术与情绪管理(通识选修)</span>
+                </li>
+                <li style="text-align: center;font-size: 14px">备注：包含教师资格证必考科目</li>
+             </ul>
+            <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div>
+
+        <div class="imgBox1" style="padding-left:40px;padding-right:40px;margin-top: 15%">
+             <img src="images/kuang_04.png" class="headimg" style="width: 98%">
+             <span class="floatTitle">专业课程</span>
+             <div class="box">
+                <img class="bd" src="images/shape_yinhao_small.png" style="right: 10%;width: 30px">
+                 <div class="title" style="text-align: right;margin-right: 2%">电竞解说<br>与主持</div>
+                 <div class="text" style="text-align: left;">
+                     <span>电竞解说概论</span>
+                     <span>普通话实训</span>
+                     <span>新闻口播实战训练</span>
+                     <span>新闻采写</span>
+                     <span>电竞赛事技能解说</span>
+                 </div>
+             </div>
+             <div class="box">
+                 <div class="text" style="text-align: right;margin-right: 2%">
+                     <span>编导学</span>
+                     <span>视频剪辑软件应用</span>
+                     <span>视频节目策划</span>
+                     <span>数码特技制作和应用</span>
+                     <span>电竞视频的力量与灵感</span>
+                     <span>摄像基本原理</span>
+                 </div>
+                 <div class="title" style="text-align: left;vertical-align: bottom">导编播</div>
+             </div>
+             <div class="box">
+                <img class="bd" src="images/shape_yinhao.png" style="top: 60%;left: 25%;width: 50px">
+                <div class="title" style="text-align: right;margin-right: 2%">电竞商务</div>
+                <div class="text" style="text-align: left;">
+                    <span>电子竞技商务入门</span>
+                    <span>市场分析和策划</span>
+                    <span>俱乐部运营与管理</span>
+                    <span>赛事运营与管理</span>
+                    <span>电竞推广与传播</span>
+                    <span>电竞品牌营销与策略</span>
+                </div>
+             </div>
+            <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div>
+
+        <div style="margin-top: 15%">
+            <img src="images/jbox.jpg" style="width: 100%;height: auto">
+             <!-- <img src="images/kuang_04.png" class="headimg" style="width: 98%">
+             <span class="floatTitle" style="padding-right: 15px">奖学金计划</span>
+             <div style="text-align: left;">
+                <div style="margin-bottom: 10%">
+                    <p style="margin-bottom: 1%">设立<span class="redBtn" style="margin-left: 2%">优秀学院奖学金</span></p>
+                    <p>优秀学员可获得免除本期学费的奖励机会</p>
+                </div>
+                <p style="font-size: 22px;color: #fff">结业认证就业<span style="color: red;display: inline-block;margin-left: 5%;font-size: 29px">···········</span></p>
+                <p>凡在实训基地完成全部课程</p>
+                <p>考试成绩合格者均可获得由</p>
+                <p class="redBtn">腾讯电竞和超竞教育共同认证的结业证书</p>
+                <div>
+                    <p>优秀毕业生还可以获得：</p>
+                    <p class="Auth">
+                       <img src="images/j1.png" alt="" style="width: 100%">
+                    </p>
+                    <p class="Auth">
+                        <img src="images/j2.png" alt="" style="width: 100%">
+                    </p>
+                    <p class="Auth">
+                        <img src="images/j3.png" alt="" style="width: 100%">
+                    </p>
+                </div>
+             </div>
+            <img src="images/kuang_03.png" class="footimg" style="width: 99%"> -->
+        </div>
+
+         <div class="imgBox1" style="padding-left:40px;padding-right:40px;margin-top: 15%">
+            <img src="images/kuang_04.png" class="headimg" style="width: 98%">
+            <span class="floatTitle">报名流程</span>
+            <div style="text-align: center;">
+                <img src="images/123.png" style="width: 100%">
+                <p style="margin-top: 12px;font-size: 14px;box-sizing: border-box;padding: 0 8%">学费13800元/人/期，培训期内食宿和校内交通统一安排，费用自理。</p>
+            </div>
+            <img src="images/kuang_03.png" class="footimg" style="width: 99%">
+        </div>
+
+        <div style="margin-top: 40px">
+            <img src="images/message.jpg" style="width: 100%;position: relative;bottom: -5px">
+        </div>
+    </div>
+</div>
+<script src="//cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+<script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+var pro = ["北京","天津","上海","重庆","河北","山西","辽宁","吉林","黑龙江","江苏","浙江","安徽","福建","江西","山东","河南","湖北","湖南","广东","海南","四川","贵州","云南","陕西","甘肃","青海","内蒙古","广西","西藏","宁夏","新疆维吾尔自治区","香港","澳门","台湾"];
+var city = {
+    北京:["东城区","西城区","崇文区","宣武区","朝阳区","海淀区","丰台区","石景山区","房山区","通州区","顺义区","昌平区","大兴区","怀柔区","平谷区","门头沟区","密云县","延庆县"],
+    天津:["和平区","河东区","河西区","南开区","河北区","红桥区","东丽区","西青区","北辰区","津南区","武清区","宝坻区","滨海新区","静海县","宁河县","蓟县"],
+    上海:["黄浦区","卢湾区","徐汇区","长宁区","静安区","普陀区","闸北区","虹口区","杨浦区","闵行区","宝山区","嘉定区","浦东新区","金山区","松江区","青浦区","奉贤区","崇明县"],
+    重庆:["渝中区","大渡口区","江北区","南岸区","北碚区","渝北区","巴南区","长寿区","双桥区","沙坪坝区","万盛区","万州区","涪陵区","黔江区","永川区","合川区","江津区","九龙坡区","南川区","綦江县","潼南县","荣昌县","璧山县","大足县","铜梁县","梁平县","开县","忠县","城口县","垫江县","武隆县","丰都县","奉节县","云阳县","巫溪县","巫山县","石柱土家族自治县","秀山土家族苗族自治县","酉阳土家族苗族自治县","彭水苗族土家族自治县"],
+    河北:["石家庄","唐山","秦皇岛","邯郸","邢台","保定","张家口","承德","沧州","廊坊","衡水"],
+    山西:["太原","大同","阳泉","长治","晋城","朔州","晋中","运城","忻州","临汾","吕梁"],
+    辽宁:["沈阳","大连","鞍山","抚顺","本溪","丹东","锦州","营口","阜新","辽阳","盘锦","铁岭","朝阳","葫芦岛"],
+    吉林:["长春","吉林","四平","辽源","通化","白山","松原","白城","延边朝鲜族自治州"],
+    黑龙江:["哈尔滨","齐齐哈尔","鹤岗","双鸭山","鸡西","大庆","伊春","牡丹江","佳木斯","七台河","黑河","绥化","大兴安岭"],
+    江苏:["南京","苏州","无锡","常州","镇江","南通","泰州","扬州","盐城","连云港","徐州","淮安","宿迁"],
+    浙江:["杭州","宁波","温州","嘉兴","湖州","绍兴","金华","衢州","舟山","台州","丽水"],
+    安徽:["合肥","芜湖","蚌埠","淮南","马鞍山","淮北","铜陵","安庆","黄山","滁州","阜阳","宿州","巢湖","六安","亳州","池州","宣城"],
+    福建:["福州","厦门","莆田","三明","泉州","漳州","南平","龙岩","宁德"],
+    江西:["南昌","景德镇","萍乡","九江","新余","鹰潭","赣州","吉安","宜春","抚州","上饶"],
+    山东:["济南","青岛","淄博","枣庄","东营","烟台","潍坊","济宁","泰安","威海","日照","莱芜","临沂","德州","聊城","滨州","菏泽"],
+    河南:["郑州","开封","洛阳","平顶山","安阳","鹤壁","新乡","焦作","濮阳","许昌","漯河","三门峡","南阳","商丘","信阳","周口","驻马店"],
+    湖北:["武汉","黄石","十堰","荆州","宜昌","襄樊","鄂州","荆门","孝感","黄冈","咸宁","随州","恩施"],
+    湖南:["长沙","株洲","湘潭","衡阳","邵阳","岳阳","常德","张家界","益阳","郴州","永州","怀化","娄底","湘西"],
+    广东:["广州","深圳","珠海","汕头","韶关","佛山","江门","湛江","茂名","肇庆","惠州","梅州","汕尾","河源","阳江","清远","东莞","中山","潮州","揭阳","云浮"],
+    海南:["海口","三亚"],
+    四川:["成都","自贡","攀枝花","泸州","德阳","绵阳","广元","遂宁","内江","乐山","南充","眉山","宜宾","广安","达州","雅安","巴中","资阳","阿坝","甘孜","凉山"],
+    贵州:["贵阳","六盘水","遵义","安顺","铜仁","毕节","黔西南","黔东南","黔南"],
+    云南:["昆明","曲靖","玉溪","保山","昭通","丽江","普洱","临沧","德宏","怒江","迪庆","大理","楚雄","红河","文山","西双版纳"],
+    陕西:["西安","铜川","宝鸡","咸阳","渭南","延安","汉中","榆林","安康","商洛"],
+    甘肃:["兰州","嘉峪关","金昌","白银","天水","武威","酒泉","张掖","庆阳","平凉","定西","陇南","临夏","甘南"],
+    青海:["西宁","海东","海北","海南","黄南","果洛","玉树","海西"],
+    内蒙古:["呼和浩特","包头","乌海","赤峰","通辽","鄂尔多斯","呼伦贝尔","巴彦淖尔","乌兰察布","锡林郭勒盟","兴安盟","阿拉善盟"],
+    广西:["南宁","柳州","桂林","梧州","北海","防城港","钦州","贵港","玉林","百色","贺州","河池","来宾","崇左"],
+    西藏:["拉萨","那曲","昌都","林芝","山南","日喀则","阿里"],
+    宁夏:["银川","石嘴山","吴忠","固原","中卫"],
+    新疆维吾尔自治区:["乌鲁木齐","克拉玛依","吐鲁番","哈密","和田","阿克苏","喀什","克孜勒苏","巴音郭楞","昌吉","博尔塔拉","伊犁","塔城","阿勒泰"],
+    香港:["香港岛","九龙东","九龙西","新界东","新界西"],
+    澳门:["澳门半岛","离岛"],
+    台湾:["台北","高雄","基隆","新竹","台中","嘉义","台南市"]};
+$(function(){
+    var interval =''; //倒计时
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            code:0,
+            codeText:'恭喜你，报名成功!',
+
+
+            pro:pro,   //省份
+            city:city, //市区
+            countDown:0,
+            domeNum:60,
+
+            //用户输入
+            userPro:'省',
+            usercity:'',
+            userGender:1, //性别
+            userName:'',  //姓名
+            userMobile:'',//手机号码
+            userEmail:'', //邮箱
+            userVerf:'',  //验证码
+        },
+        watch: {
+            userPro: function(val) {
+                if(val!='省'){
+                    this.usercity=this.city[val][0]
+                }
+            },
+
+            domeNum:function(val){
+                console.log(val)
+                var _this = this;
+                if(val<=0){
+                    clearInterval(interval);
+                    _this.countDown = 0;
+                     _this.domeNum = 60;
+                }
+            }
+        },
+
+        created: function() {},
+        mounted: function() {},
+        methods: {
+            //获取手机验证码
+            getVerification:function(){
+                var _this = this;
+                $.ajax({
+                    url: "https://api.supergen.cn/v1/cms/mobile/code?mobile="+_this.userMobile,
+                    type: "GET",
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    crossDomain: true,
+                    success: function(data) {
+                        if(data.Code&&data.Code!=0){
+                            _this.code=1;
+                            _this.codeText=data.Msg;
+                            setTimeout(function() {_this.code=0;}, 1000);
+                            return;
+                        }
+                        _this.countDown = 1;
+                        interval = setInterval(function(){
+                            _this.domeNum-=1;
+                        },1000)
+                    }
+                })
+            },
+
+            //验证邮箱
+            isEmail:function(str){ 
+                var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
+                return reg.test(str); 
+            },
+
+            //报名
+            submit:function(){
+                var _this = this;
+                var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ig; 
+                var p = {
+                    name:_this.userName,     //姓名
+                    province:_this.userPro,  //省份
+                    gener:_this.userGender, //性别
+                    city:_this.usercity,     //市/区
+                    mobile:_this.userMobile, //手机号码
+                    email:_this.userEmail,   //电子邮箱
+                    //remark:_this.userVerf,   //验证码
+                }
+                if(p.name==''){alert('姓名不能为空！');return}
+                if(p.province==''||p.province=='省'){alert('省份不能为空！');return}
+                if(p.mobile==''){alert('联系方式不能为空！');return}
+                if(p.email==''){alert('邮箱不能为空！');return}
+                if(!_this.isEmail(p.email)){alert('邮箱格式不正确');return}
+                if(p.remark==''){alert('未填写验证码！');return}
+                //if(confirm('确认提交报名信息？')){
+                    _this.setFunction(p)
+                //}
+            },
+
+            setFunction:function(p){
+                var _this = this;
+                $.ajax({
+                        url: "https://api.supergen.cn/v1/cms/1113/applications?code="+_this.userVerf,
+                        type: "post",
+                        //data: JSON.stringify(p),
+                        data: JSON.stringify(p),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        xhrFields: {
+                            withCredentials: true
+                        },
+                        crossDomain: true,
+                        success: function(data) {
+                            _this.code=1;
+                            if(data.Code&&data.Code!=0){
+                                _this.codeText=data.Msg;
+                                setTimeout(function() {_this.code=0;}, 1000);
+                            }else{
+                                 _this.codeText='恭喜你，报名成功!',
+                                setTimeout(function() {_this.code=0;}, 1000);
+                            }
+                        },
+                    })
+            }
+        }
+    });
+})
+</script>
+</body>
+</html>

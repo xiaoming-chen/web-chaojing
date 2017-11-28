@@ -1,0 +1,91 @@
+<html lang="en" style="width: 100%;">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>新闻列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+
+    <style>
+        html, body {position: relative;height: 100%;}
+        body {background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 14px;color:#000;margin: 0;padding: 0;  }
+        .swiper-container {width: 100%;height: 100%;margin-left: auto;margin-right: auto;  }
+        .swiper-slide {  text-align: center;font-size: 18px;background: #fff;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
+    </style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6262f328d28e41c100342367defd3141";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body style="width: 100%;height: 100%;box-sizing: border-box;background:#ededed;overflow: hidden">
+<div id="header" style="text-align: left;background: #fff;position: relative;z-index: 99">
+    <a href="index.html"><img src="images/log.png" alt="" style="height: 100%"></a>
+    <p><a class="aboutUs" href="aboutus.html" target="_blank" >关于我们</a></p>
+    <p style="color: #000;border-bottom:3px solid #fff;line-height: 4;margin-top: -11px;margin-right: 25px">
+        <a class="aboutUs" href="index.html">首 页</a>
+    </p>
+</div>
+<div id="edg" style="box-sizing: border-box;background: #ededed;width: 50%;margin: 0 auto;height: 100%;">
+    <div id="journalism">
+        <div style="color: #666;cursor: pointer;padding: 20px 0;font-size: 16px">
+            <p>本页位置：<a href="index.html" style="color: #666">首页</a>>竞超互娱大事件</p>
+        </div>
+        <p class="journalismP">
+            <span></span>超竞互娱大事件
+        </p>
+        <div style="box-sizing: border-box;padding: 10px 40px;">
+            <ul>
+                <li v-for="(journalism,i) in journalismArr" @click="newsSetail(journalism.Content)" style="list-style-type:disc">
+                    <p>
+                        <a :href="'newsdetail.html#'+journalism.ID" v-text="journalism.Title" @click="save(journalism)"></a>
+                    </p>
+                    <span v-text="dateStringAr(journalism.Time)" style="color: #000"></span>
+                </li>
+            </ul>
+        </div>
+        <div id="pageNum">
+            <ul>
+                <li style="width: 60px !important;" @click="currentPage=1">首页</li>
+                <li style="border: none;display: inline-block;width: auto" v-if="currentPage<=4">
+                    <p v-for="i in pageNum" v-if="i<=5" :class="currentPage==i?'current':''" @click="currentPage=i,journalismFn(1)"  v-text="i" style="margin:0 2px" ></p>
+                </li>
+                <li style="border: none;display: inline-block;width: auto" v-else-if="currentPage>4&&currentPage<pageNum-3">
+                    <p :class="currentPage==i?'current':''" @click="currentPage=currentPage-2,journalismFn(1)" v-text="currentPage-2" style="margin:0 2px"></p>
+                    <p :class="currentPage==i?'current':''" @click="currentPage=currentPage-1,journalismFn(1)" v-text="currentPage-1" style="margin:0 2px"></p>
+                    <p class="current" v-text="currentPage" style="margin:0 2px"></p>
+                    <p :class="currentPage==i?'current':''" @click="currentPage=currentPage+1,journalismFn(1)" v-text="currentPage+1" style="margin:0 2px"></p>
+                    <p :class="currentPage==i?'current':''" @click="currentPage=currentPage+2,journalismFn(1)" v-text="currentPage+2" style="margin:0 2px"></p>
+                </li>
+                <li style="border: none;display: inline-block;width: auto" v-else-if="currentPage>=pageNum-5&&currentPage<=pageNum">
+                    <p :class="currentPage==pageNum-4?'current':''" v-text="pageNum-4" @click="currentPage=pageNum-4,journalismFn(1)"></p>
+                    <p :class="currentPage==pageNum-3?'current':''" v-text="pageNum-3" @click="currentPage=pageNum-3,journalismFn(1)"></p>
+                    <p :class="currentPage==pageNum-2?'current':''" v-text="pageNum-2" @click="currentPage=pageNum-2,journalismFn(1)"></p>
+                    <p :class="currentPage==pageNum-1?'current':''" v-text="pageNum-1" @click="currentPage=pageNum-1,journalismFn(1)"></p>
+                    <p :class="currentPage==pageNum?'current':''" v-text="pageNum" @click="currentPage=pageNum,journalismFn(1)"></p>
+                </li>
+                <li style="width: 60px !important;" @click="currentPage!=1&&currentPage!=pageNum?currentPage=currentPage+1:'',journalismFn(1)">下一页</li>
+                <li style="width: 60px !important;" @click="currentPage=pageNum,journalismFn(1)">末页</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--<div id="footer" style="position: absolute;bottom: 0;left: 0;background: #fff;color: #000">-->
+    <!--<span style="color: #000">关于我们</span>|-->
+    <!--<span style="color: #000">联系我们</span>|-->
+    <!--<span style="color: #000">加入我们</span>|-->
+    <!--<span style="color: #000">友情链接</span>-->
+<!--</div>-->
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

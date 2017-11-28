@@ -1,0 +1,347 @@
+<html lang="en" style="width: 100%;height: 100%">
+<head>
+    <meta charset="utf-8">
+    <title>超竞官网</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link href="css/grid-accordion.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        html, body {position: relative;height: 100%;}
+        body {background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 14px;color:#000;margin: 0;padding: 0;  }
+        .swiper-container {width: 100%;height: 100%;margin-left: auto;margin-right: auto;  }
+        .swiper-slide {  text-align: center;font-size: 18px;background: #fff;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
+
+    </style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6262f328d28e41c100342367defd3141";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body style="width: 100%;height: 100%;box-sizing: border-box;">
+<div id="edg" style="background: #fff;">
+    <div class="swiper-container swiper-container-vertical" style="background: #000;">
+        <!-- 主体 -->
+        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+            <!-- 第一页 -->
+            <div class="swiper-slide swiper-slide-active" style="height: 100%;background:url('images/bg_1.jpg') no-repeat center center;background-size: 100% 100%">
+                <div id="header" style="text-align: left;background: #fff">
+                    <a href="#"><img src="images/log.png" alt="" style="height: 100%"></a>
+                    <p><a class="aboutUs" href="aboutus.html" target="_blank">关于我们</a></p>
+                    <p style="color: #000;border-bottom:3px solid #d82028;line-height: 4;margin-top: -12px;margin-right: 25px">
+                        <a class="aboutUs" href="#">首 页</a>
+                    </p>
+                </div>
+                <!--imgArr.length>1&&journalismArr.length>=3-->
+                <div id="new" class="col-xs-12" v-show="bool(imgArr,journalismArr,Advertisement)=='true'" style="background-color: rgb(32, 30, 31)">
+                    <!--新闻 待定-->
+                    <div id="banner" class="col-xs-4" style="width: 500px;height: 200px">
+                        <!--标题-->
+                        <ul v-if="imgArr.length>2">
+                            <li v-for="(x,i) in imgArr.length" :class="i==0?'on':''" v-text="i+1"></li>
+                        </ul>
+                        <div id="banner_list" style="width: 100%;background: rgb(32, 30, 31)">
+                            <a :href="imgi.Dest==''?'javascript:void(0)':imgi.Dest" target="_blank" v-for="(imgi,i) in imgArr" :style="{left:i==0?0:'','width':'100%','height':'100%',background:imgi.URL?imgUrl(imgi.URL):''}">
+                            </a>
+                        </div>
+                    </div>
+                    <div id="title" class="title" style="width: 30%;float: left">
+                        <a :href="Advertisement.Dest==''?'javascript:void(0);':Advertisement.Dest" target="_blank" style="display: inline-block;width: 100%;height: 100%;background-color: #312d2c">
+                            <img id="bigNewImg" :src="Advertisement.URL" alt="" :style="{'height':windowW>1600?'150px':'0','width':windowW>1600?'200px':'0'}">
+                            <div id="bigNewTxt" :style="{'display':'inline-block','background':'none','border':'none','height':'100%','width':windowW>1600?'52%':'100%'}">
+                                <p class="txt" v-text="Advertisement.Desc" style="width: 100%;height: 100%"></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div style="background:#201e1f;background-size:100% 100%;float: left;width: 33%" >
+                        <p class="more">
+                            <a href="journalism.html" style="position: absolute;right: 2%;"><span v-if="journalismArr.length>3">more></span></a>
+                        </p>
+                        <ul class="new" @click="save(journalism.Content)" style="box-sizing: border-box;width: 100%;padding-left: 15%;min-width: 400px">
+                            <li v-for="(journalism,i) in journalismArr" v-if="i<3" @click="save(journalism)" style="height: 45px;line-height: 45px;text-align: left;list-style-type: disc!important;list-style-image:url('images/new.png');min-width: 320px;white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;">
+                                <a :href="'newsdetail.html#'+journalism.ID" v-text="journalism.Title" style="color: #fff;min-width: 320px;white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="imgMove" data-offset="15" class="layer-10 col-xs-12" style="display: inline-block;text-align: center">
+                    <p class="col-xs-1"></p>
+                    <img class="imgMove col-xs-10" src="images/title.png" alt="">
+                    <p class="col-xs-1"></p>
+                </div>
+            </div>
+
+            <!-- 第二页 -->
+            <div id="swiper-slide2" class="swiper-slide swiper-slide-next">
+                <div class="lf lfx">
+                    <div style="width: 544px;height: 344px;position: absolute;top: 50%;left: 50%;margin:-180px 0 0 -145px ">
+                        <div data-offset="30" class="layer-30" style="text-align: left;font-size: 50px;color: #fff;margin-bottom: 5px;font-family: pictos;">电竞板块</div>
+                        <div data-offset="23" class="layer-23" style="text-align: left;font-size: 39px;color: red;margin-bottom: 8px;font-family: pictos;">-登顶世界的超级电竞俱乐部</div>
+                        <div data-offset="23" class="layer-23" style="text-align: left"><s></s></div>
+                        <div data-offset="18" class="layer-18" style="text-align: left;font-size: 16px;color: #fff;width: 75%;letter-spacing:2px;line-height:22px">EDG电竞俱乐部，超竞互娱的头部IP，于2013年9月在广州成立，德玛西亚杯五连冠，连续两年被评为LPL年度最佳俱乐部，第一支在全球官方赛事中夺得冠军的中国电竞队伍。</div>
+                        <div data-offset="23" class="layer-23" id="gotoEDG">
+                            <a href="http://www.edgteam.cn" target="_blank" style="font-family: pictos;">前往EDG俱乐部></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion" class="lf rt" style="box-sizing: border-box;padding: 0 20px 0 150px">
+                    <ul class="accordion" style="width: 100%;height: 100%">
+                        <li>
+                            <a href="" target="_blank"><img src="images/1.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/2.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/3.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/4.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/5.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/6.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/7.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/8.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/9.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/10.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/11.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/12.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/13.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/14.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/15.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank"><img src="images/16.jpg" alt=""></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 第三页 -->
+            <div id="swiper-slide3" class="swiper-slide col-xs-12">
+                <div class="col-xs-4" style="position: absolute;left: 0;padding: 0;padding-left: 5%;min-width: 550px;z-index: 999;top:30%">
+                    <div>
+                        <div data-offset="30" class="layer-30" style="text-align: left;font-size: 50px;color: #fff;margin-bottom: 5px;font-family: pictos;">泛娱乐板块</div>
+                        <div data-offset="23" class="layer-23" style="text-align: left;font-size: 39px;color: #f6f31d;margin-bottom: 8px;font-family: pictos;">-缔造电竞的无限可能</div>
+                        <div data-offset="23" class="layer-23" style="text-align: left"><s></s></div>
+                        <div data-offset="18" class="layer-18" style="text-align: left;font-size: 16px;color: #fff;width: 75%;letter-spacing:1px;line-height:22px">超竞互娱的重点战略板块，从电竞俱乐部投资为起点，逐步建立起稳定运营服务体系和进取的投资管理体系，在电竞产业快速发展的背景下，围绕优质电竞IP内容，进一步延伸至活动策划、节目录制、IP孵化以及艺人经济等电竞泛娱乐产业领域的风险和股权投资。</div>
+                    </div>
+                </div>
+                <div id="swiperImg" class="col-xs-8" style="padding: 0;position: absolute;right: 0;width: 100%;z-index: 0;min-height: 768px;">
+                    <div style="height: 14%"></div>
+                    <div style="height: 75%;box-sizing: border-box;padding-right: 1%">
+                        <div class="box" style="box-sizing: border-box;height: 30%;text-align: right">
+                            <div data-offset="15" class="layer-10" style="display:inline-block;padding:0;margin-right: -45px">
+                                <img class="" src="images/three1.png" alt="" style="float: right;">
+                            </div>
+                            <div data-offset="15" class="layer-10" style="display:inline-block;padding:0">
+                                <img class="" src="images/three2.png" alt="" style="float: right;">
+                            </div>
+                        </div>
+                        <div class="box" style="box-sizing: border-box;height: 30%;text-align: right;margin:1% 0">
+                            <div data-offset="15" class="layer-10" style="display:inline-block;padding:0;margin-right: -45px">
+                                <img class="" src="images/three3.png" alt="" style="float: right;">
+                            </div>
+                            <div data-offset="15" class="layer-10" style="display:inline-block;padding:0">
+                                <img class="" src="images/three4.png" alt="" style="float: right;">
+                            </div>
+                        </div>
+                        <div class="box" style="box-sizing: border-box;height: 30%;text-align: right">
+                            <div data-offset="15" class="layer-10" style="display:inline-block;padding:0;margin-right: -45px">
+                                <img class="" src="images/three5.png" alt="" style="float: right;">
+                            </div>
+                            <div data-offset="15" class="layer-10" style="display:inline-block;padding:0;margin-right: -45px">
+                                <img class="" src="images/three6.png" alt=""  style="float: right;">
+                            </div>
+                            <div data-offset="15" class="layer-10" style="display:inline-block;padding:0">
+                                <img class="" src="images/three7.png" alt="" style="float: right;">
+                            </div>
+                        </div>
+                        <!-- <div class="col-xs-12 box" style="box-sizing: border-box;height: 30%;text-align: right">
+                            <div data-offset="15" class="col-xs-6 layer-10" style="display:inline-block;padding:0;text-align: right;position: relative;left: 4.2%">
+                                <img class="" src="images/three1.png" alt="" style="height: 100%;width: auto">
+                            </div>
+                            <div data-offset="15" class="col-xs-6 layer-10" style="display:inline-block;padding:0">
+                                <img class="" src="images/three2.png" alt="" style="height: 100%;width: auto">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 box" style="box-sizing: border-box;height: 30%;text-align:right;margin: 30px 0;">
+                            <div class="col-xs-1"></div>
+                            
+                        </div>
+                        <div class="col-xs-12 box" style="box-sizing: border-box;height: 30%;text-align: right">
+                            
+                        </div> -->
+                    </div>
+                    <div style="height: 10%"></div>
+                </div>
+            </div>
+
+            <!-- 第四页 -->
+            <div id="swiper-slide4" class="swiper-slide col-xs-12">
+                <!--<div data-offset="15" class="layer-10" style="display: inline-block"><img class="imgMove" src="images/5.jpg" alt="" style="width: 220px;height: 160px"></div>-->
+                <div class="lf lfx col-xs-4" style="padding: 0;padding-left: 5%;">
+                    <div>
+                        <div data-offset="30" class="layer-30" style="text-align: left;font-size: 50px;color: #fff;margin-bottom: 5px;font-family: pictos;">电竞教育板块</div>
+                        <div data-offset="23" class="layer-23" style="text-align: left;font-size: 39px;color: red;margin-bottom: 8px;font-family: pictos;">-振兴中华电竞梦</div>
+                        <div data-offset="23" class="layer-23" style="text-align: left"><s></s></div>
+                        <div data-offset="18" class="layer-18" style="text-align: left;font-size: 16px;color: #fff;width: 70%;letter-spacing:2px;line-height:22px">超竞互娱电竞产业战略布局的重要环节。作为电竞领域的先行者，超竞互娱一直致力于在电子竞技人才培养的实践和探索。展望未来，超竞互娱将联手腾讯电竞，共同开拓中国电子竞技人才培养的创新模式，为电竞行业输送具有综合实力的专业人才。</div>
+                    </div>
+                </div>
+                <div id="swiperFour" class="col-xs-8" style="padding: 0;height: 100%">
+                    <div class="col-xs-12" style="padding: 0">
+                        <p style="height: 8%"></p>
+                        <div class="col-xs-4" style="width: 30%;text-align: center">
+                            <img src="images/pic_3.png" alt="" style="">
+                            <img src="images/pic_2.png" alt="" style=";margin: 20px 0">
+                            <img src="images/pic_1.png" alt="" style="">
+                        </div>
+                        <div class="col-xs-4" style="width: 30%;text-align: center">
+                            <img src="images/pic_6.png" alt="" style="">
+                            <img src="images/pic_5.png" alt="" style=";margin: 20px 0">
+                            <img src="images/pic_4.png" alt="" style="">
+                        </div>
+                        <div class="col-xs-4" style="width: 30%;text-align: center">
+                            <img src="images/pic_9.png" alt="" style="">
+                            <img src="images/pic_7.png" alt="" style=";margin: 20px 0">
+                            <img src="images/pic_8.png" alt="" style="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第五页 -->
+            <div id="swiper-slide5" class="swiper-slide" style="height: 488px;background:#d0111b">
+                <div class="col-xs-12" style="position: relative;padding: 0;height: 100%;width: 100%;z-index: 99;overflow: hidden">
+                    <img src="images/bg5.png" style="position: absolute;left: -5%;z-index: 99;height: 105%;width: auto;min-width: 1366px">
+                    <div class="col-xs-4" style="z-index: 999;height: 100%;padding-left: 5%">
+                        <div style="position: absolute;top: 30%">
+                            <div data-offset="30" class="layer-30" style="text-align: left;font-size: 50px;color: #fff;margin-bottom: 5px;font-family: pictos;">电竞园区板块</div>
+                            <div data-offset="23" class="layer-23" style="text-align: left;font-size: 39px;color: #f6f31d;margin-bottom: 8px;font-family: pictos;">-世界超级电竞梦主场</div>
+                            <div data-offset="23" class="layer-23" style="text-align: left"><s></s></div>
+                            <div data-offset="18" class="layer-18" style="text-align: left;font-size: 16px;color: #fff;width: 80%;letter-spacing:2px;line-height:22px">作为电竞泛娱乐届中最懂行的产业园区运营商，超竞互娱深谙产业联动聚集对于产业发展的重要性。在全资控股上海首个以电竞为主题的产业园区—电竞硅谷后，未来5年，超竞互娱将携手腾讯互娱在全国核心区域城市布局投资多个电竞泛娱乐产业聚集区，书写电竞产业地产崭新篇章。</div>
+                        </div>
+                    </div>
+                    <div data-offset="35" class="col-xs-8 layer-35" style="position: relative;top: -5%;z-index: 0;height: 110%;background:url('images/edgWL.jpg') no-repeat left center;background-size: 105% 105%"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 导航 -->
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+        </div>
+    </div>
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.gridAccordion.min.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var $poster = $('.poster'),
+            $shine = $('.shine'),
+            $layer = $('div[class*="layer-"]'),
+            w = $(window).width(),  //window width
+            h = $(window).height(); //window height
+    $(window).on('mousemove', function(e) {
+        var offsetX = e.pageX / w,
+                offsetY = e.pageY / h,
+                dy = e.pageY - h / 2,
+                dx = e.pageX - w / 2,
+                theta = Math.atan2(dy, dx),
+                angle = theta * 180 / Math.PI - 90,
+                offsetPoster = $poster.data('offset'),
+                transformPoster = 'translateY(' + -offsetX * offsetPoster + 'px) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 2)) + 'deg)';
+        if (angle < 0) {angle = angle + 360;}
+        $shine.css('background', 'linear-gradient(' + angle + 'deg, rgba(255,255,255,' + e.pageY / h + ') 0%,rgba(255,255,255,0) 80%)');
+        $poster.css('transform', transformPoster);
+        $layer.each(function() {
+            var $this = $(this),
+                    offsetLayer = $this.data('offset') || 0,
+                    transformLayer = 'translateX(' + offsetX * offsetLayer + 'px) translateY(' + offsetY * offsetLayer + 'px)';
+            $this.css('transform', transformLayer);
+        });
+    });
+</script>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true
+    });
+    var t = n =0, count;
+    $(document).ready(function(){
+        count=$("#banner_list a").length;
+        $("#banner_list a:not(:first-child)").hide();
+        $("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
+        $("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});
+        $("#banner li").click(function(){
+            var i = $(this).text() -1;//获取Li元素内的值，即1，2，3，4
+            n = i;
+            if (i >= count) return;
+            $("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
+            $("#banner_info").unbind().click(function(){window.open($("#banner_list a").eq(i).attr('href'), "_blank")})
+            $("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+            document.getElementById("banner").style.background="";
+            $(this).toggleClass("on");
+            $(this).siblings().removeAttr("class");
+        });
+        t = setInterval("showAuto()", 4000);
+        $("#banner").hover(function(){clearInterval(t)}, function() {t = setInterval("showAuto()", 4000);});
+    });
+
+    function showAuto() {
+        n = n >=(count -1) ?0 : ++n;
+        $("#banner li").eq(n).trigger('click');
+    }
+//    window.onload = function(){
+//        for(var ii=0;ii<$('#swiperImg div.box div.layer-10').length;ii++){
+//            if($('#swiperImg div.box div.layer-10').eq(ii).children('img').width()>0){
+//                $('#swiperImg div.box div.layer-10').eq(ii).width($('#swiperImg div.box div.layer-10>img').eq(ii).width())
+//            }
+//        }
+//    }
+</script>
+
+</body>
+</html>
