@@ -50,6 +50,9 @@
 							<th>性别</th>
 							<th>地域</th>
 							<th>手机号</th>
+							<th>学期班</th>
+							<th>课程</th>
+							<th>班次</th>
 							<th>邮箱</th>
 							<th>报名时间</th>
 							<th>备注</th>
@@ -67,6 +70,11 @@
 							</td>
 							<td v-text="itme.Regionx"></td>
 							<td v-text="itme.Mobile"></td>
+
+							<td>学期班</td>
+							<td>课程</td>
+							<td>班次</td>
+
 							<td v-text="itme.Email"></td>
 							<td v-text="setTime(itme.CreatedAt)"></td>
 							<td :title="itme.Remark" v-text="itme.Remark==''?'N/A':itme.Remark" style="max-width:240px;overflow:hidden"></td>
