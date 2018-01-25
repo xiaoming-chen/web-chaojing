@@ -1,9 +1,15 @@
 $(function(){
+	console.log('data')
 	var vw = new Vue({
-		el:"enteredPc",
+		el:"#enteredPc",
 		data:{
-			item:[],
-		}
+			items:['./images/Mask_1.png','./images/Mask_2.png','./images/Mask_3.png','./images/Mask_4.png'],
+			swiperImgs:[
+				{link:'#',url:'./images/1.jpg'},
+				{link:'#',url:'./images/2.jpg'},
+				{link:'#',url:'./images/banner.png'},
+			]
+		},
 
 		//监听
  		watch: {},
@@ -22,8 +28,19 @@ $(function(){
         },
 
 		//页面加载完成后
-		mounted: function() {},
-
-
+		mounted: function() {
+			var swiper = new Swiper('.swiper-container', {
+				spaceBetween: 0,
+				loop: true,
+				pagination: {
+					el: '.swiper-pagination',
+				},
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+				},
+			});
+		},
 	})
 })
+
