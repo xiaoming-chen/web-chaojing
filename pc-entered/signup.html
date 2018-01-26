@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>超竞教育·报名</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body style="overflow: hidden;">
+	<div id="signup">
+		<div class="signup">
+			<div class="name" >
+				<p>学 员 报 名</p>
+			</div>
+			<div style="margin-top: 40px">
+				<ul>
+					<li style="height: 90px;margin-bottom: 20px">
+						<span class="name">课程</span>
+						<div class="box" style="height: 100%">
+							<select class="curriculum" v-model="majorNum">
+								<option v-for="(maj,i) in major" :value="i" v-text="maj"></option>
+							</select>
+							<div style="margin-top: 18px">
+								<select class="cur cur1">
+									<option v-for="(cur,i) in curriculum[majorNum]" :value="i" v-text="cur">1</option>
+								</select>
+								<select class="cur cur2">
+									<option v-if="majorNum==3" :disabled="majorNum>0?true:false">无</option>
+									<option v-if="majorNum<3" :value="i" v-for="(shi,i) in shift[majorNum]" v-text="shi" :disabled="majorNum>0?true:false"></option>
+								</select>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="name">姓名</span>
+						<div class="box">
+							<input class="txt" type="text">
+						</div>
+					</li>
+					<li>
+						<span class="name">性别</span>
+						<div class="box">
+							<span :class="stakFun(!stak)" @click="stak=!stak">男</span>
+							<span :class="stakFun(stak)" @click="stak=!stak">女</span>
+						</div>
+					</li>
+					<li>
+						<span class="name">所在地</span>
+						<div class="box">
+							<select class="cur cur1" style="width: 47%">
+								<option>1</option>
+								<option>1</option>
+								<option>1</option>
+								<option>1</option>
+								<option>1</option>
+							</select>
+							<select class="cur cur2" style="width: 47%">
+								<option>1</option>
+								<option>1</option>
+								<option>1</option>
+								<option>1</option>
+								<option>1</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<span class="name">手机号</span>
+						<div class="box">
+							<input class="txt" type="text">
+						</div>
+					</li>
+					<li>
+						<span class="name">验证码</span>
+						<div class="box" style="box-sizing: border-box;padding-right: 120px;position: relative;">
+							<input class="txt" type="text">
+							<span class="Verification">发送验证码</span>
+						</div>
+					</li>
+					<li>
+						<span class="name">邮箱</span>
+						<div class="box">
+							<input class="txt" type="text">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="bottomIcon">
+			<img  src="images/logo.png">
+		</div>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/signup.js"></script>
+</body>
+</html>

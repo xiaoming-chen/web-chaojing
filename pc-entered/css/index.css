@@ -6,7 +6,69 @@ body{height: 100%;width: 100%;background: #222;overflow: hidden;overflow-y:auto;
 .title{text-align: center;font-size: 25px;margin: 10px 0}
 
 #bottomIcon{position: fixed;background: #222;left: 0;right: 0;bottom:0;text-align: center;width: 100%;height: 100px;padding-top: 10px}
-#bottomIcon>img{height: auto;width: 50%}
+#bottomIcon>img{height: auto;position: absolute;top: 20%;left: 50%;margin-left: -450px}
 #textCont{margin-bottom: 130px;}
 div.curriculum ul{width: 82%;margin: 0 auto;text-align: center}
-div.curriculum ul li{list-style: none;display: inline-block;background: #fff;width: 45%;height: 120px;margin:0 20px 20px 0}
+div.curriculum ul li{list-style: none;display: inline-block;background: #fff;width: 45%;height: 120px;margin:0 20px 20px 0;min-width: 650px}
+
+#box{
+	padding-top: 3%;
+	width: 60%;
+	margin: 0 auto
+}
+
+#tradin #box div.box{
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
+	position: relative;
+	background: url('../images/kuang.png') no-repeat center center;
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	padding: 30px 30px 10px 60px;
+}
+#tradin #box div.box p.characteristic{position: absolute;width: 120px;text-align: center;left: 50%;top: -20px;margin-left: -60px;font-size: 28px}
+#tradin #box div.box ul{margin: 20px 0 30px}
+#tradin #box div.box ul li{margin-bottom: 10px;font-size: 14px}
+
+#tradin #box div.table{width: 70%;margin: 0 auto;}
+#tradin #box div.table table{width: 100%;border-collapse:collapse;}
+#tradin #box div.table table th,#tradin #box div.table table td{text-align: center;font-weight: normal;height: 40px;line-height: 40px;font-size: 15px}
+#tradin #box div.table table th{background:#444;border: 1px solid #222;font-size: 16px}
+#tradin #box div.table table td{background:#333;border: 1px solid #222}
+#tradin #box div.table table{width: 100%;}
+
+#ljbm{position: fixed;right: 20%;bottom: 2%;cursor: pointer;}
+#ljbm:hover{opacity: .8}
+
+#box div.stuBox>div.tbox{display: inline-block;width: 32%;position: relative;vertical-align: top;}
+#box div.stuBox>div.bbox{width: 100%;display: inline-block;border-left: 1px dotted #999;height: 500px;margin: 0;width: 62%;vertical-align: top;;box-sizing: border-box;padding: 1% 1% 0 3%;position: relative;}
+#box div.stuBox>div.bbox>img.fd{position: absolute;left: -14.5px;top: -10px;}
+
+#box div.stuBox>div.bbox h3{margin: 15px 0}
+#box div.stuBox>div.bbox table{width: 100%;border-collapse:collapse;}
+#box div.stuBox>div.bbox table th,#box div.stuBox>div.bbox table td{text-align: center;font-weight: normal;height: 30px;font-size: 16px}
+#box div.stuBox>div.bbox table th{background:#444;border: 1px solid #222;font-size: 16px;height: 40px}
+#box div.stuBox>div.bbox table td{background:#333;border: 1px solid #222;height: 100px;min-width: 110px;padding: 0 2px}
+
+#signup>div.signup{width: 35%;min-width: 600px;margin: 0 auto;height: auto;position: relative;}
+
+#signup>div.signup div.name{height: 2px;border-bottom: 4px solid #3e3e3e;position: relative;margin-top: 45px}
+#signup>div.signup div.name p{width: 200px;font-size: 30px;position: absolute;top: -18px;left: 50%;;background:#222;text-align:center;margin-left: -100px}
+#signup>div.signup ul{width: 70%;margin: 0 auto;margin-top: 3%}
+#signup>div.signup li{list-style: none;display: block;margin: 5px 0;height: 60px}
+
+#signup>div.signup li span.name{float: left;display: inline-block;width: 80px;text-align: right;margin-top: 5px}
+#signup>div.signup li div.box{width: 100%;box-sizing: border-box;padding-left: 90px}
+span.stak{display: inline-block;width: 60px;height: 35px;box-sizing: border-box;padding-left: 25px;line-height: 35px;cursor: pointer;}
+span.male{background: url('../images/icon_sex_selected.png') no-repeat center left;}
+span.female{background: url('../images/icon_sex_un.png') no-repeat center left;}
+#signup>div.signup li .txt{box-sizing: border-box;width: 100%;height: 35px;background: #3e3e3e;border: none;outline:none;padding: 0 1px}
+
+
+#signup .curriculum{width: 100%;height: 35px;background: #3e3e3e;border: none;outline:none;font-size: 15px}
+#signup .cur{height: 35px;background: #3e3e3e;border: none;outline:none;font-size: 15px}
+#signup .cur1{width: 60%}
+#signup .cur2{width: 35%;float: right}
+#signup .Verification{display: inline-block;float: right;position: absolute;top: 0;right: 0;width:80px;height: 24px;line-height: 24px;background: red;padding: 5px 10px;cursor: pointer;}
+#signup .Verification:hover{opacity: .8}

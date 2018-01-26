@@ -3,7 +3,12 @@ $(function(){
 	var vw = new Vue({
 		el:"#enteredPc",
 		data:{
-			items:['./images/Mask_1.png','./images/Mask_2.png','./images/Mask_3.png','./images/Mask_4.png'],
+			items:[
+				{k:0,url:'./images/Mask_1.png',type:'0'},
+				{k:0,url:'./images/Mask_2.png',type:'1'},
+				{k:0,url:'./images/Mask_3.png',type:'2'},
+				{k:1,url:'./images/Mask_4.png',type:'1'},
+			],
 			swiperImgs:[
 				{link:'#',url:'./images/1.jpg'},
 				{link:'#',url:'./images/2.jpg'},

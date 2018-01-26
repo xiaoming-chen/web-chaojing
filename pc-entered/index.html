@@ -28,7 +28,12 @@
 			<div class="curriculum">
 				<ul>
 					<li v-for="(it,i) in items">
-						<img :src="it" alt="" style="width: 100%;height: 100%">
+						<a v-if="it.k==0" :href="'trainingcourse.html?type='+i">
+							<img :src="it.url" alt="" style="width: 100%;height: 100%">
+						</a>
+						<a v-if="it.k==1" :href="'studytour.html?type='+it.k">
+							<img :src="it.url" alt="" style="width: 100%;height: 100%">
+						</a>
 					</li>
 				</ul>
 			</div>

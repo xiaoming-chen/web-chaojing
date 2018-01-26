@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>超竞教育·报名</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div id="tradin">
+		<a id="ljbm" :href="'signup.html?op=0&type='+paramobj.type"><img src="images/ljbm.png" alt=""></a>
+		<img :src="items[num].url" alt="">
+		<div id="box">
+			<div class="box">
+				<p class="characteristic">项目特色</p>
+				<ul>
+					<li v-for="(charac,i) in characteristic" v-text="charac"></li>
+				</ul>
+			</div>
+			<div class="table" style="margin-top: 30px" v-for="(cls,i) in shiftClass">
+				<div style="margin-bottom: 20px">
+					<h2 style="margin: 10px 0">
+						<img src="images/Star.png" alt="" style="vertical-align: text-top">{{cls.title}}
+					</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>班别</th>
+								<th>开班地点</th>
+								<th>开班时间</th>
+								<th>学习周期</th>
+								<th>学费</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="(shcls,i) in cls.classEx">
+								<td v-text="shcls.name"></td>
+								<td v-if="i==0" :rowspan="cls.classEx.length" v-text="cls.place"></td>
+								<td v-text="shcls.time">4月中旬</td>
+								<td v-text="shcls.cycle">12周</td>
+								<td v-text="shcls.money">19800元</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/tranining.js"></script>
+</body>
+</html>

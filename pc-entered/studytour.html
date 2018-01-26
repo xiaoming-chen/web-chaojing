@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>超竞教育·游学</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div id="study">
+		<a id="ljbm" style="right: 15%" :href="'signup.html?op=1&type='+paramobj.type"><img src="images/ljbm.png" alt=""></a>
+		<img src="images/Mask_4.png" alt="">
+		<div id="box" style="min-width: 1140px">
+			 <div class="stuBox" v-for="(cat,i) in study">
+			 	<div class="tbox">
+			 		<img :src="cat.imgUrl" alt="" style="position: relative;z-index: 1">
+			 		<p style="border-top: 1px dotted #ccc;width: 50px;height: 2px;position: absolute;top: 15%;right: -5px"></p>
+			 	</div>
+			 	<div class="bbox">
+			 		<img class="fd" src="images/fd.png" alt="">
+			 		<h3 v-text="cat.title"></h3>
+			 		<table>
+			 			<thead>
+			 				<tr>
+			 					<th>项目时间</th>
+			 					<th>行程时间</th>
+			 					<th>出发城市</th>
+			 					<th>行程时长</th>
+			 					<th>费用</th>
+			 				</tr>
+			 			</thead>
+			 			<tbody>
+			 				<tr>
+			 					<td v-text="cat.objtime"></td>
+			 					<td style="min-width: 150px;" v-text="cat.gotime"></td>
+			 					<td v-text="cat.city"></td>
+			 					<td v-text="cat.timelength"></td>
+			 					<td v-text="cat.money"></td>
+			 				</tr>
+			 			</tbody>
+			 		</table>
+			 		<div class="project">
+			 			<p style="color: #ccc;font-size: 18px;margin: 30px 0 10px">
+			 				<img src="images/ts.png" alt="" style="vertical-align: text-bottom;">项目特色:
+			 			</p>
+			 			<ul style="margin-left: 40px">
+			 				<li v-for="(cht,i) in cat.characteristic" v-text="cht" style="margin: 5px 0;font-size: 14px"></li>
+			 			</ul>
+			 		</div>
+			 	</div>
+			 </div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/study.js"></script>
+</body>
+</html>
